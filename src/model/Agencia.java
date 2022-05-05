@@ -95,7 +95,7 @@ public class Agencia {
 	 * Realiza la validacion de los datos, aceptando o no el ingreso.
 	 * @param nombreUsuario
 	 * @param contrasena
-	 * @throws UsuarioIncorrectoException el usuario no se encuentra en el registro
+	 * @throws UsuarioIncorrectoException el empleado no se encuentra en la lista de empleados
 	 */
 	public void loginEmpleado(String nombreUsuario, String contrasena) throws UsuarioIncorrectoException {
 		for (Empleado empleado : this.empleados) {
@@ -103,7 +103,7 @@ public class Agencia {
 				try {
 					empleado.validaContrasena(contrasena);
 				} catch (ContrasenaIncorrectaException e) {
-					System.out.println("Contrasena incorrecta");a
+					System.out.println("Contrasena incorrecta");
 				}
 			} else
 				throw new UsuarioIncorrectoException(nombreUsuario, "nombre incorrecto");
@@ -115,7 +115,7 @@ public class Agencia {
 	 * Realiza la validacion de los datos, aceptando o no el ingreso.
 	 * @param nombreUsuario
 	 * @param contrasena
-	 * @throws UsuarioIncorrectoException el usuario no se encuentra en el registro
+	 * @throws UsuarioIncorrectoException el empleador no se encuentra en la lista de empleadores
 	 */
 	public void loginEmpleador(String nombreUsuario, String contrasena) throws UsuarioIncorrectoException {
 		for (Empleador empleador : this.empleadores) {
